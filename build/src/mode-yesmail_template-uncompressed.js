@@ -35,7 +35,7 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-ace.define('ace/mode/html', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text', 'ace/mode/javascript', 'ace/mode/css', 'ace/tokenizer', 'ace/mode/html_highlight_rules', 'ace/mode/behaviour/xml', 'ace/mode/folding/html'], function(require, exports, module) {
+define('ace/mode/yesmail_template', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text', 'ace/mode/javascript', 'ace/mode/css', 'ace/tokenizer', 'ace/mode/yesmail_template_highlight_rules', 'ace/mode/behaviour/xml', 'ace/mode/folding/html'], function(require, exports, module) {
 "use strict";
 
 var oop = require("../lib/oop");
@@ -43,7 +43,7 @@ var TextMode = require("./text").Mode;
 var JavaScriptMode = require("./javascript").Mode;
 var CssMode = require("./css").Mode;
 var Tokenizer = require("../tokenizer").Tokenizer;
-var HtmlHighlightRules = require("./html_highlight_rules").HtmlHighlightRules;
+var HtmlHighlightRules = require("./yesmail_template_highlight_rules").HtmlHighlightRules;
 var XmlBehaviour = require("./behaviour/xml").XmlBehaviour;
 var HtmlFoldMode = require("./folding/html").FoldMode;
 
@@ -118,7 +118,7 @@ exports.Mode = Mode;
  *
  * ***** END LICENSE BLOCK ***** */
 
-ace.define('ace/mode/javascript', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text', 'ace/tokenizer', 'ace/mode/javascript_highlight_rules', 'ace/mode/matching_brace_outdent', 'ace/range', 'ace/worker/worker_client', 'ace/mode/behaviour/cstyle', 'ace/mode/folding/cstyle'], function(require, exports, module) {
+define('ace/mode/javascript', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text', 'ace/tokenizer', 'ace/mode/javascript_highlight_rules', 'ace/mode/matching_brace_outdent', 'ace/range', 'ace/worker/worker_client', 'ace/mode/behaviour/cstyle', 'ace/mode/folding/cstyle'], function(require, exports, module) {
 "use strict";
 
 var oop = require("../lib/oop");
@@ -283,7 +283,7 @@ exports.Mode = Mode;
  *
  * ***** END LICENSE BLOCK ***** */
 
-ace.define('ace/mode/javascript_highlight_rules', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/lib/lang', 'ace/unicode', 'ace/mode/doc_comment_highlight_rules', 'ace/mode/text_highlight_rules'], function(require, exports, module) {
+define('ace/mode/javascript_highlight_rules', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/lib/lang', 'ace/unicode', 'ace/mode/doc_comment_highlight_rules', 'ace/mode/text_highlight_rules'], function(require, exports, module) {
 "use strict";
 
 var oop = require("../lib/oop");
@@ -608,7 +608,7 @@ exports.JavaScriptHighlightRules = JavaScriptHighlightRules;
  *
  * ***** END LICENSE BLOCK ***** */
 
-ace.define('ace/mode/doc_comment_highlight_rules', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text_highlight_rules'], function(require, exports, module) {
+define('ace/mode/doc_comment_highlight_rules', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text_highlight_rules'], function(require, exports, module) {
 "use strict";
 
 var oop = require("../lib/oop");
@@ -704,7 +704,7 @@ exports.DocCommentHighlightRules = DocCommentHighlightRules;
  *
  * ***** END LICENSE BLOCK ***** */
 
-ace.define('ace/mode/matching_brace_outdent', ['require', 'exports', 'module' , 'ace/range'], function(require, exports, module) {
+define('ace/mode/matching_brace_outdent', ['require', 'exports', 'module' , 'ace/range'], function(require, exports, module) {
 "use strict";
 
 var Range = require("../range").Range;
@@ -785,7 +785,7 @@ exports.MatchingBraceOutdent = MatchingBraceOutdent;
  *
  * ***** END LICENSE BLOCK ***** */
 
-ace.define('ace/worker/worker_client', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/lib/event_emitter'], function(require, exports, module) {
+define('ace/worker/worker_client', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/lib/event_emitter'], function(require, exports, module) {
 "use strict";
 
 var oop = require("../lib/oop");
@@ -975,7 +975,7 @@ exports.WorkerClient = WorkerClient;
  *
  * ***** END LICENSE BLOCK ***** */
 
-ace.define('ace/mode/behaviour/cstyle', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/behaviour'], function(require, exports, module) {
+define('ace/mode/behaviour/cstyle', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/behaviour'], function(require, exports, module) {
 "use strict";
 
 var oop = require("../../lib/oop");
@@ -1196,7 +1196,7 @@ exports.CstyleBehaviour = CstyleBehaviour;
  *
  * ***** END LICENSE BLOCK ***** */
 
-ace.define('ace/mode/folding/cstyle', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/range', 'ace/mode/folding/fold_mode'], function(require, exports, module) {
+define('ace/mode/folding/cstyle', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/range', 'ace/mode/folding/fold_mode'], function(require, exports, module) {
 "use strict";
 
 var oop = require("../../lib/oop");
@@ -1290,7 +1290,7 @@ oop.inherits(FoldMode, BaseFoldMode);
  *
  * ***** END LICENSE BLOCK ***** */
 
-ace.define('ace/mode/folding/fold_mode', ['require', 'exports', 'module' , 'ace/range'], function(require, exports, module) {
+define('ace/mode/folding/fold_mode', ['require', 'exports', 'module' , 'ace/range'], function(require, exports, module) {
 "use strict";
 
 var Range = require("../../range").Range;
@@ -1403,7 +1403,7 @@ var FoldMode = exports.FoldMode = function() {};
  *
  * ***** END LICENSE BLOCK ***** */
 
-ace.define('ace/mode/css', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text', 'ace/tokenizer', 'ace/mode/css_highlight_rules', 'ace/mode/matching_brace_outdent', 'ace/worker/worker_client', 'ace/mode/folding/cstyle'], function(require, exports, module) {
+define('ace/mode/css', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text', 'ace/tokenizer', 'ace/mode/css_highlight_rules', 'ace/mode/matching_brace_outdent', 'ace/worker/worker_client', 'ace/mode/folding/cstyle'], function(require, exports, module) {
 "use strict";
 
 var oop = require("../lib/oop");
@@ -1513,7 +1513,7 @@ exports.Mode = Mode;
  *
  * ***** END LICENSE BLOCK ***** */
 
-ace.define('ace/mode/css_highlight_rules', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/lib/lang', 'ace/mode/text_highlight_rules'], function(require, exports, module) {
+define('ace/mode/css_highlight_rules', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/lib/lang', 'ace/mode/text_highlight_rules'], function(require, exports, module) {
 "use strict";
 
 var oop = require("../lib/oop");
@@ -1779,7 +1779,7 @@ exports.CssHighlightRules = CssHighlightRules;
  *
  * ***** END LICENSE BLOCK ***** */
 
-ace.define('ace/mode/html_highlight_rules', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/css_highlight_rules', 'ace/mode/javascript_highlight_rules', 'ace/mode/xml_util', 'ace/mode/text_highlight_rules'], function(require, exports, module) {
+define('ace/mode/yesmail_template_highlight_rules', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/css_highlight_rules', 'ace/mode/javascript_highlight_rules', 'ace/mode/xml_util', 'ace/mode/text_highlight_rules'], function(require, exports, module) {
 "use strict";
 
 var oop = require("../lib/oop");
@@ -1801,6 +1801,14 @@ var HtmlHighlightRules = function() {
         }, {
             token : "xml_pe",
             regex : "<\\?.*?\\?>"
+        }, {
+            token : "postblock",
+            regex : "<!--\\s*POST\\s*",
+            next : "ymscript"
+        }, {
+            token : "tickblock",
+            regex : "`",
+            next : "ymscript"
         }, {
             token : "comment",
             merge : true,
@@ -1854,6 +1862,8 @@ var HtmlHighlightRules = function() {
     xmlUtil.tag(this.$rules, "tag", "start");
     xmlUtil.tag(this.$rules, "css", "css-start");
     xmlUtil.tag(this.$rules, "script", "js-start");
+//    xmlUtil.tag(this.$rules, "ymscript", "ym-start");
+    xmlUtil.tag(this.$rules, "ymscript", "start");
     
     this.embedRules(JavaScriptHighlightRules, "js-", [{
         token: "comment",
@@ -1863,12 +1873,34 @@ var HtmlHighlightRules = function() {
         token: "meta.tag",
         regex: "<\\/(?=script)",
         next: "tag"
+    }, {
+        token: "postblock",
+        regex: "\\s*POST\\s*-->",
+        next: "start"
+    }, {
+        token: "tickblock",
+        regex: "`",
+        next: "start"
     }]);
     
     this.embedRules(CssHighlightRules, "css-", [{
         token: "meta.tag",
         regex: "<\\/(?=style)",
         next: "tag"
+    }]);
+
+    this.embedRules(JavaScriptHighlightRules, "ym-", [{
+        token: "comment",
+        regex: "\\/\\/.*",
+        next: "tag"
+    }, {
+        token: "postblock",
+        regex: "\\s*POST\\s*-->",
+        next: "start"
+    }, {
+        token: "tickblock",
+        regex: "`",
+        next: "start"
     }]);
 };
 
@@ -1913,7 +1945,7 @@ exports.HtmlHighlightRules = HtmlHighlightRules;
  *
  * ***** END LICENSE BLOCK ***** */
 
-ace.define('ace/mode/xml_util', ['require', 'exports', 'module' , 'ace/lib/lang'], function(require, exports, module) {
+define('ace/mode/xml_util', ['require', 'exports', 'module' , 'ace/lib/lang'], function(require, exports, module) {
 "use strict";
 
 var lang = require("../lib/lang");
@@ -2068,7 +2100,7 @@ exports.tag = function(states, name, nextState) {
  *
  * ***** END LICENSE BLOCK ***** */
 
-ace.define('ace/mode/behaviour/xml', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/behaviour', 'ace/mode/behaviour/cstyle'], function(require, exports, module) {
+define('ace/mode/behaviour/xml', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/behaviour', 'ace/mode/behaviour/cstyle'], function(require, exports, module) {
 "use strict";
 
 var oop = require("../../lib/oop");
@@ -2158,7 +2190,7 @@ exports.XmlBehaviour = XmlBehaviour;
  *
  * ***** END LICENSE BLOCK ***** */
 
-ace.define('ace/mode/folding/html', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/folding/mixed', 'ace/mode/folding/xml', 'ace/mode/folding/cstyle'], function(require, exports, module) {
+define('ace/mode/folding/html', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/folding/mixed', 'ace/mode/folding/xml', 'ace/mode/folding/cstyle'], function(require, exports, module) {
 "use strict";
 
 var oop = require("../../lib/oop");
@@ -2243,7 +2275,7 @@ oop.inherits(FoldMode, MixedFoldMode);
  *
  * ***** END LICENSE BLOCK ***** */
 
-ace.define('ace/mode/folding/mixed', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/folding/fold_mode'], function(require, exports, module) {
+define('ace/mode/folding/mixed', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/folding/fold_mode'], function(require, exports, module) {
 "use strict";
 
 var oop = require("../../lib/oop");
@@ -2330,7 +2362,7 @@ oop.inherits(FoldMode, BaseFoldMode);
  *
  * ***** END LICENSE BLOCK ***** */
 
-ace.define('ace/mode/folding/xml', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/lib/lang', 'ace/range', 'ace/mode/folding/fold_mode', 'ace/token_iterator'], function(require, exports, module) {
+define('ace/mode/folding/xml', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/lib/lang', 'ace/range', 'ace/mode/folding/fold_mode', 'ace/token_iterator'], function(require, exports, module) {
 "use strict";
 
 var oop = require("../../lib/oop");
@@ -2556,7 +2588,7 @@ oop.inherits(FoldMode, BaseFoldMode);
 
 });;
             (function() {
-                ace.require(["ace/ace"], function(a) {
+                window.require(["ace/ace"], function(a) {
                     if (!window.ace)
                         window.ace = {};
                     for (var key in a) if (a.hasOwnProperty(key))

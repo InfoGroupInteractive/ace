@@ -35,7 +35,7 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-ace.define('ace/mode/html', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text', 'ace/mode/javascript', 'ace/mode/css', 'ace/tokenizer', 'ace/mode/html_highlight_rules', 'ace/mode/behaviour/xml', 'ace/mode/folding/html'], function(require, exports, module) {
+ace.define('ace/mode/yesmail_template', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/text', 'ace/mode/javascript', 'ace/mode/css', 'ace/tokenizer', 'ace/mode/yesmail_template_highlight_rules', 'ace/mode/behaviour/xml', 'ace/mode/folding/html'], function(require, exports, module) {
 "use strict";
 
 var oop = require("../lib/oop");
@@ -43,7 +43,7 @@ var TextMode = require("./text").Mode;
 var JavaScriptMode = require("./javascript").Mode;
 var CssMode = require("./css").Mode;
 var Tokenizer = require("../tokenizer").Tokenizer;
-var HtmlHighlightRules = require("./html_highlight_rules").HtmlHighlightRules;
+var HtmlHighlightRules = require("./yesmail_template_highlight_rules").HtmlHighlightRules;
 var XmlBehaviour = require("./behaviour/xml").XmlBehaviour;
 var HtmlFoldMode = require("./folding/html").FoldMode;
 
@@ -1779,7 +1779,7 @@ exports.CssHighlightRules = CssHighlightRules;
  *
  * ***** END LICENSE BLOCK ***** */
 
-ace.define('ace/mode/html_highlight_rules', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/css_highlight_rules', 'ace/mode/javascript_highlight_rules', 'ace/mode/xml_util', 'ace/mode/text_highlight_rules'], function(require, exports, module) {
+ace.define('ace/mode/yesmail_template_highlight_rules', ['require', 'exports', 'module' , 'ace/lib/oop', 'ace/mode/css_highlight_rules', 'ace/mode/javascript_highlight_rules', 'ace/mode/xml_util', 'ace/mode/text_highlight_rules'], function(require, exports, module) {
 "use strict";
 
 var oop = require("../lib/oop");
@@ -1801,6 +1801,14 @@ var HtmlHighlightRules = function() {
         }, {
             token : "xml_pe",
             regex : "<\\?.*?\\?>"
+        }, {
+            token : "postblock",
+            regex : "<!--\\s*POST\\s*",
+            next : "ymscript"
+        }, {
+            token : "tickblock",
+            regex : "`",
+            next : "ymscript"
         }, {
             token : "comment",
             merge : true,
@@ -1854,6 +1862,8 @@ var HtmlHighlightRules = function() {
     xmlUtil.tag(this.$rules, "tag", "start");
     xmlUtil.tag(this.$rules, "css", "css-start");
     xmlUtil.tag(this.$rules, "script", "js-start");
+//    xmlUtil.tag(this.$rules, "ymscript", "ym-start");
+    xmlUtil.tag(this.$rules, "ymscript", "start");
     
     this.embedRules(JavaScriptHighlightRules, "js-", [{
         token: "comment",
@@ -1863,12 +1873,34 @@ var HtmlHighlightRules = function() {
         token: "meta.tag",
         regex: "<\\/(?=script)",
         next: "tag"
+    }, {
+        token: "postblock",
+        regex: "\\s*POST\\s*-->",
+        next: "start"
+    }, {
+        token: "tickblock",
+        regex: "`",
+        next: "start"
     }]);
     
     this.embedRules(CssHighlightRules, "css-", [{
         token: "meta.tag",
         regex: "<\\/(?=style)",
         next: "tag"
+    }]);
+
+    this.embedRules(JavaScriptHighlightRules, "ym-", [{
+        token: "comment",
+        regex: "\\/\\/.*",
+        next: "tag"
+    }, {
+        token: "postblock",
+        regex: "\\s*POST\\s*-->",
+        next: "start"
+    }, {
+        token: "tickblock",
+        regex: "`",
+        next: "start"
     }]);
 };
 

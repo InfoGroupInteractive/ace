@@ -368,6 +368,14 @@ exports.tag = function(states, name, nextState) {
         regex : "\/?>",
         next : nextState
     }, {
+        token : "postblock",
+        regex : "\\s*POST\\s*-->",
+        next : nextState
+    }, {
+        token : "tickblock",
+        regex : "`",
+        next : nextState
+    }, {
         token : "keyword.operator",
         regex : "="
     }, {
